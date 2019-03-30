@@ -2,7 +2,7 @@
 
 function iluvatar () {
     // eslint-disable-next-line
-    console.log(22);
+    console.log('welcome Iluvatar');
 }
 
 export default iluvatar;
