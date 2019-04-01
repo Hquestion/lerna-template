@@ -15,7 +15,7 @@
     },
     "scripts": {
         "lint": "eslint src/*.js packages/**/*.js --fix",
-        "publish": "lerna version",
+        "publish": "lerna version --conventional-commits",
         "bootstrap": "lerna bootstrap",
         "release": "standard-version",
         "cm": "npx git-cz"
