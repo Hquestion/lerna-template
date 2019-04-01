@@ -90,13 +90,13 @@ lerna publish <commit-id> // 发布指定commit-id的代码
 ```
 publish 时基本上lerna做了这些事情：
 
-1. 本地打个tag（例如git tag v1.0.0）
-
-2. 自动更新依赖项版本号
-
-3. 然后把各个package发布到npm(可以配置--skip-npm跳过)
-
-4. 最后把tag和相应的commit给push上去
+1. 检查哪些项目应该被publish
+2. 调整lerna.json中的版本号
+3. 修改所有的package.json让它们只想正确的版本
+4. 更新所有的依赖
+5. 创建新的git commit和tag
+6. publish(可以配置--skip-npm跳过发布到npm)
+7. 最后把tag和相应的commit给push上去
 
 #### 版本管理
 
