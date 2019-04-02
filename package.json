@@ -18,7 +18,7 @@
         "publish": "lerna version --conventional-commits",
         "bootstrap": "lerna bootstrap",
         "release": "standard-version",
-        "cm": "npx git-cz"
+        "cm": "git-cz"
     },
     "devDependencies": {
         "@commitlint/cli": "^7.5.2",
