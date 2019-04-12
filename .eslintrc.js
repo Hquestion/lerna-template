@@ -1,10 +1,13 @@
 module.exports = {
+    root: true,
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true
     },
     "extends": [
-        'eslint:recommended'
+        'plugin:vue/strongly-recommended',
+        'eslint:recommended',
     ],
     "globals": {
         "Atomics": "readonly",
@@ -23,6 +26,7 @@ module.exports = {
     ],
     "rules": {
         "semi": ["error", "always"],
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "vue/html-indent": ["error", 4]
     }
 };
