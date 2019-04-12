@@ -14,10 +14,10 @@ module.exports = {
     },
     output: {
         filename: "[name].js",
-        path: path.resolve(__dirname, '../packages/ui/dist'),
+        path: path.resolve(__dirname, '../packages/ui/lib'),
         publicPath: './',
         library: "IluvatarUI",
-        libraryTarget: "commonjs2",
+        libraryTarget: "commonjs",
         // chunkFilename: "[id].js",
         // libraryExport: "default"
     },
@@ -45,15 +45,11 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['vue-style-loader',"css-loader"]
+                use: ['style-loader',"css-loader"]
             },
             {
                 test: /\.scss$/,
-                use: ['vue-style-loader', "css-loader", "sass-loader"]
-            },
-            {
-                test: /\.sass$/,
-                use: ["style-loader", "sass-loader"]
+                use: ['style-loader', "css-loader", "sass-loader"]
             },
             {
                 test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
@@ -68,11 +64,13 @@ module.exports = {
     plugins: [
         new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
-        new BundleAnalyzerPlugin(),
         new VueLoaderPlugin(),
         new CopyWebpackPlugin([
             {from: 'theme', to: 'theme'}
-        ])
+        ]),
+        new BundleAnalyzerPlugin({
+            analyzerPort: 3366
+        })
     ]
 };
 

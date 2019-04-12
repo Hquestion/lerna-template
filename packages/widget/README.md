@@ -1,11 +1,11 @@
-# `iluvatar`
+# `widget`
 
 > TODO: description
 
 ## Usage
 
 ```
-const iluvatar = require('iluvatar');
+const widget = require('widget');
 
 // TODO: DEMONSTRATE API
 ```

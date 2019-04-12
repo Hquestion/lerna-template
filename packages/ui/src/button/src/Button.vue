@@ -1,5 +1,8 @@
 <template>
-    <div class="ilv-button">
+    <div
+        class="ilv-button"
+        @click="handleClick"
+    >
         <slot />
     </div>
 </template>
@@ -9,6 +12,11 @@ export default {
     name: 'IlvButton',
     data() {
         return {};
+    },
+    methods: {
+        handleClick() {
+            this.$emit('click');
+        }
     }
 };
 </script>
