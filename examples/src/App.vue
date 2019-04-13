@@ -7,7 +7,8 @@
             <router-link to="/about">
                 About
             </router-link>
-            <IlvButton>你好，点我</IlvButton>
+            <IlvButton @click="setlang">你好，点我</IlvButton>
+            <IlvButton />
         </div>
         <router-view />
     </div>
@@ -33,8 +34,17 @@
 }
 </style>
 <script>
-    import IlvButton from "../../packages/ui/src/button/src/Button";
-    export default {
-        components: {IlvButton}
+// import IlvButton from "../../packages/ui/src/button/src/Button";
+import enMsg from '../../packages/ui/lib/utils/locale/lang/en';
+export default {
+    // components: {IlvButton},
+    methods: {
+        setlang() {
+            this.$i18n.locale = 'en';
+        }
+    },
+    mounted() {
+
     }
+};
 </script>

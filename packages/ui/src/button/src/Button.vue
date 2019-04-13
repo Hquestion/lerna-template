@@ -3,13 +3,15 @@
         class="ilv-button"
         @click="handleClick"
     >
-        <slot />
+        <slot>{{ t('ui.button.ok') }}</slot>
     </div>
 </template>
 
 <script>
+import localeMixin from '../../../utils/mixins/locale';
 export default {
     name: 'IlvButton',
+    mixins: [localeMixin],
     data() {
         return {};
     },

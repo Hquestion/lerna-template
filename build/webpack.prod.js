@@ -10,16 +10,16 @@ module.exports = {
     mode: 'production',
     context: path.resolve(__dirname, '../packages'),
     entry: {
-        ui: './ui/index.js'
+        index: './ui/index.js'
     },
     output: {
         filename: "[name].js",
         path: path.resolve(__dirname, '../packages/ui/lib'),
         publicPath: './',
         library: "IluvatarUI",
-        libraryTarget: "commonjs",
+        libraryTarget: "commonjs2",
         // chunkFilename: "[id].js",
-        // libraryExport: "default"
+        libraryExport: "default"
     },
     externals: [WebpackNodeExternals()],
     resolve: {
@@ -66,7 +66,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
         new CopyWebpackPlugin([
-            {from: 'theme', to: 'theme'}
+            {from: './ui/theme', to: 'theme'},
+            {from: './ui/utils', to: 'utils'}
         ]),
         new BundleAnalyzerPlugin({
             analyzerPort: 3366
