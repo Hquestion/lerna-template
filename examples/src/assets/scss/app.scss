@@ -1,5 +1,6 @@
 $ilv-primary-color: #000;
 
+@import "../../../../packages/ui/lib/theme/index.scss";
 body {
-    background: $ilv-primary-color;
+    background: #fff;
 }

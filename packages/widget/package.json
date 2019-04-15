@@ -1,7 +1,7 @@
 {
-  "name": "@iluvatar/widget",
+  "name": "@sdx/widget",
   "version": "1.0.0",
-  "description": "> TODO: description",
+  "description": "控件级业务组件库",
   "keywords": [
     "widget"
   ],

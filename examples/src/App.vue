@@ -34,8 +34,6 @@
 }
 </style>
 <script>
-// import IlvButton from "../../packages/ui/src/button/src/Button";
-import enMsg from '../../packages/ui/lib/utils/locale/lang/en';
 export default {
     // components: {IlvButton},
     methods: {

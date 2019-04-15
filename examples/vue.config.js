@@ -1,3 +1,8 @@
+const path = require('path');
+const config = require('../build/config');
+
+const resolve = dir => path.join(__dirname, dir);
+
 module.exports = {
     pluginOptions: {
         i18n: {
@@ -5,6 +10,11 @@ module.exports = {
             fallbackLocale: 'zh-CN',
             localeDir: 'locales',
             enableInSFC: false
+        }
+    },
+    configureWebpack: {
+        resolve: {
+            alias: config.alias
         }
     }
 };

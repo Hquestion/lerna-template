@@ -1,10 +1,7 @@
 {
-  "name": "@sdx/ui",
-  "version": "1.0.1",
-  "description": "iluvatar基础组件库",
-  "keywords": [
-    "ui"
-  ],
+  "name": "@sdx/utils",
+  "version": "1.0.0",
+  "description": "sdx工具类组件库",
   "author": "贺小雷 <xiaolei.he@iluvatar.ai>",
   "homepage": "https://github.com/Hquestion/lerna-template#readme",
   "license": "ISC",
@@ -14,7 +11,7 @@
     "test": "__tests__"
   },
   "files": [
-    "src"
+    "lib"
   ],
   "publishConfig": {
     "registry": "http://192.168.20.38:4873/"
@@ -28,8 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/Hquestion/lerna-template/issues"
-  },
-  "peerDependencies": {
-    "vue": "^2.6.10"
   }
 }
