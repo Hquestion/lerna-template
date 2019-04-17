@@ -15,11 +15,14 @@
     },
     "scripts": {
         "lint": "eslint examples/*.js packages/**/*.js --fix",
-        "publish": "lerna version --conventional-commits",
+        "publish": "lerna publish",
         "bootstrap": "lerna bootstrap",
         "release": "standard-version",
         "cm": "git-cz",
-        "build:lib": "webpack --config ./build/webpack.prod.js  --colors",
+        "build:ui": "lerna run build --scope=@sdx/ui",
+        "build:widget": "lerna run build --scope=@sdx/widget",
+        "build:view": "lerna run build --scope=@sdx/view",
+        "build": "lerna run build",
         "dev": "cd examples && npm install && npm run serve"
     },
     "devDependencies": {

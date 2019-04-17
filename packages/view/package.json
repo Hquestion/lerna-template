@@ -21,7 +21,10 @@
     "url": "git+https://github.com/Hquestion/lerna-template.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+      "build:component": "webpack --config ./build/webpack.component.js",
+      "build:lib": "webpack --config ./build/webpack.common.js",
+      "build": "npm run build:lib && npm run build:component"
   },
   "bugs": {
     "url": "https://github.com/Hquestion/lerna-template/issues"
