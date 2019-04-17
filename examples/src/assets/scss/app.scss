@@ -1,6 +1,6 @@
-$ilv-primary-color: #000;
+$ilv-primary-color: #f00;
 
-@import "../../../../packages/ui/lib/theme/index.scss";
+@import "~@sdx/ui/lib/theme/index.scss";
 body {
     background: #fff;
 }

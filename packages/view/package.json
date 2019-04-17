@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/Hquestion/lerna-template/issues"
+  },
+  "dependencies": {
+    "@sdx/utils": "^1.0.0"
   }
 }

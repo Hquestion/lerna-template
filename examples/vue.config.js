@@ -16,5 +16,8 @@ module.exports = {
         resolve: {
             alias: config.alias
         }
+    },
+    devServer: {
+        writeToDisk: true
     }
 };

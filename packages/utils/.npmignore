@@ -1,5 +1,4 @@
 __test__
-src
 *.log
 build
 index.js

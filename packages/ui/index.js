@@ -1,4 +1,4 @@
-import Button from './src/button';
+import Button from './components/button';
 
 const IluvatarUI = {
     Button

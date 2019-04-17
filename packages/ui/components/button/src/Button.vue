@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import localeMixin from '../../../utils/mixins/locale';
+import localeMixin from '@sdx/utils/src/mixins/locale';
 export default {
     name: 'IlvButton',
     mixins: [localeMixin],

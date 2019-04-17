@@ -11,6 +11,14 @@ Object.keys(components).forEach(cate => {
     });
 });
 
+let mixinsList = [
+    '@sdx/utils/src/mixins/locale'
+];
+
+mixinsList.forEach(key => {
+    externals[key] = key;
+});
+
 externals = [Object.assign({
     vue: 'vue'
 }, externals), nodeExternals()];
@@ -22,4 +30,9 @@ exports.alias = {
     '@sdx/utils': path.resolve(__dirname, '../packages/utils'),
     '@sdx/view': path.resolve(__dirname, '../packages/view'),
     '@sdx/widget': path.resolve(__dirname, '../packages/widget'),
+};
+
+exports.analysis = {
+    enable: false,
+    port: 3366
 };

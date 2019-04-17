@@ -1,32 +1,39 @@
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const WebpackNodeExternals = require('webpack-node-externals');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const components = require('../components');
+
+const config = require('../../../build/config');
+
+const plugins = [
+    new webpack.ProgressPlugin(),
+    new VueLoaderPlugin()
+];
+
+if (config.analysis.enable) {
+    plugins.push(
+        new BundleAnalyzerPlugin({
+            analyzerPort: config.analysis.port || 8899
+        })
+    );
+}
 
 module.exports = {
     mode: 'production',
-    context: path.resolve(__dirname, '../packages'),
-    entry: {
-        index: './ui/index.js'
-    },
+    entry: components,
     output: {
         filename: "[name].js",
-        path: path.resolve(__dirname, '../packages/ui/lib'),
+        path: path.resolve(__dirname, '../lib'),
         publicPath: './',
-        library: "IluvatarUI",
-        libraryTarget: "commonjs2",
+        library: "@sdx/ui",
+        libraryTarget: "umd",
         // chunkFilename: "[id].js",
         libraryExport: "default"
     },
-    externals: [
-        '@sdx/utils/src/mixins/locale',
-        WebpackNodeExternals()
-    ],
+    externals: config.externals,
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.js', '.vue', '.json', '.css', '.scss'],
         modules: ['node_modules']
     },
     module: {
@@ -64,17 +71,6 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new webpack.ProgressPlugin(),
-        new CleanWebpackPlugin(),
-        new VueLoaderPlugin(),
-        new CopyWebpackPlugin([
-            {from: './ui/theme', to: 'theme'},
-            {from: './ui/utils', to: 'utils'}
-        ]),
-        new BundleAnalyzerPlugin({
-            analyzerPort: 3366
-        })
-    ]
+    plugins
 };
 

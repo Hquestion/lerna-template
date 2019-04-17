@@ -1,35 +1,41 @@
 {
-  "name": "@sdx/ui",
-  "version": "1.0.1",
-  "description": "iluvatar基础组件库",
-  "keywords": [
-    "ui"
-  ],
-  "author": "贺小雷 <xiaolei.he@iluvatar.ai>",
-  "homepage": "https://github.com/Hquestion/lerna-template#readme",
-  "license": "ISC",
-  "main": "lib/index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "src"
-  ],
-  "publishConfig": {
-    "registry": "http://192.168.20.38:4873/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hquestion/lerna-template.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/Hquestion/lerna-template/issues"
-  },
-  "peerDependencies": {
-    "vue": "^2.6.10"
-  }
+    "name": "@sdx/ui",
+    "version": "1.0.1",
+    "description": "iluvatar基础组件库",
+    "keywords": [
+        "ui"
+    ],
+    "author": "贺小雷 <xiaolei.he@iluvatar.ai>",
+    "homepage": "https://github.com/Hquestion/lerna-template#readme",
+    "license": "ISC",
+    "main": "lib/index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "components"
+    ],
+    "publishConfig": {
+        "registry": "http://192.168.20.38:4873/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Hquestion/lerna-template.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: run tests from root\" && exit 1",
+        "build:component": "webpack --config ./build/webpack.component.js",
+        "build:lib": "webpack --config ./build/webpack.common.js",
+        "build": "npm run build:lib && npm run build:component"
+    },
+    "bugs": {
+        "url": "https://github.com/Hquestion/lerna-template/issues"
+    },
+    "peerDependencies": {
+        "vue": "^2.6.10"
+    },
+    "dependencies": {
+        "@sdx/utils": "^1.0.0"
+    }
 }

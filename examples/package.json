@@ -18,6 +18,8 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.1.1",
     "@vue/cli-service": "^3.1.1",
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-component-customize": "^1.1.1",
     "postcss-loader": "^3.0.0",
     "vue-cli-plugin-i18n": "^0.6.0",
     "vue-template-compiler": "^2.6.10"
